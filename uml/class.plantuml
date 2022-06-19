@@ -1,0 +1,70 @@
+@startuml class
+skinparam style strictuml
+skinparam DefaultFontName Tahoma
+skinparam DefaultFontSize 16
+skinparam DefaultFontStyle bold
+skinparam ClassBorderColor #red
+skinparam ClassBackgroundColor #white
+skinparam ArrowColor #000
+skinparam ArrowThickness 3.2
+skinparam NoteBackgroundColor #yellow
+skinparam NoteBorderColor #red
+skinparam NoteFontColor #red
+hide empty members
+
+class "  Main  " as Main{
+    
+}
+
+class Engine <<singleton>>{
+    - Engine()
+    - {static} Instance : Engine*
+    + {static} GetInstance() : Engine*
+    ==
+    - EisRunning : bool
+    - window     : SDL_Window*
+    - renderer   : SDL_Renderer*
+    ..
+    + IsRunning() : bool <size:11><i>inline</i></size>
+    + Init(const char* title, int width,int height)    : bool
+    + update()  : void
+    + Render()  : void
+    + Events()  : void
+    + Clean()   : void
+    + Quit()    : void
+    + GetRenderer() : SDL_Renderer*
+}
+
+class TextureManager <<singleton>>{
+    - TextureManager()
+    - {static} Instance : TextureManager*
+    + {static} GetInstance() : TextureManager*
+    ==
+    - TextureMap : std::map<std::string, SDL_Texture*>
+    ..
+    + Load(std::string id,std::string filePath) : bool
+    + Drop(std::string id) : void
+    + clean() : void
+    + Draw(std::string id, SDL_Rectn txt, SDL_RendererFlip fl ip=SDL_FLIP_NONE) : void
+}
+
+class Victor2D{
+    - X : float
+    - Y : float
+    ..
+    + Victor2D(float x=0, float y=0)
+    + operator+ : Victor2D <size:11><i>inline</i></size>
+    + operator- : Victor2D <size:11><i>inline</i></size>
+    + operator* : Victor2D <size:11><i>inline</i></size>
+    + operator/ : Victor2D <size:11><i>inline</i></size>
+    + getX() : float
+    + getY() : float
+}
+
+
+Main <.. Engine
+TextureManager ..> Engine
+TextureManager <.. Engine
+
+
+@enduml

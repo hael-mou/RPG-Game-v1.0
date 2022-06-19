@@ -1,0 +1,10 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/hael-mou/Desktop/Games/RPG 1.0.0'
+g++ -I include -std=c++14 -m64 -Wall -Wextra -Werror -g -c src/Engine.cpp  -o src/Engine.o
+g++ -I include -std=c++14 -m64 -Wall -Wextra -Werror -g -c src/Main.cpp  -o src/Main.o
+g++ -I include -std=c++14 -m64 -Wall -Wextra -Werror -g -c src/TextureManager.cpp  -o src/TextureManager.o
+g++ src/Engine.o src/Main.o src/TextureManager.o -o bin/debug/RPG_v1 -lSDL2main -lSDL2 -lSDL2_image
+clear
+./bin/debug/RPG_v1
+make: Leaving directory '/home/hael-mou/Desktop/Games/RPG 1.0.0'
+ 
