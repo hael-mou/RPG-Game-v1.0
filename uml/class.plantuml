@@ -61,6 +61,10 @@ class Victor2D{
     + getY() : float
 }
 
+class Transform{
+    ..
+}
+
 
 Main <.. Engine
 TextureManager ..> Engine

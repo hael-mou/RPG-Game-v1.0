@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jun 19 12:02:43 2022
+# Make data base, printed on Mon Jun 20 13:09:16 2022
 
 # Variables
 
@@ -63,8 +63,6 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
-MANDATORY_PATH = /usr/share/gconf/cinnamon.mandatory.path
-# environment
 XDG_DATA_DIRS = /usr/share/cinnamon:/usr/share/gnome:/home/hael-mou/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
@@ -73,13 +71,13 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 4)
 OBJS = ${SRC:.cpp=.o}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-dc35e6ad-7a09-4e90-8d74-1d25ac63de1a.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-f9c37819-a992-4964-8c1c-17dbc216b46c.sock
 # environment
 LC_NAME = ar_MA.UTF-8
 # environment
 VSCODE_CWD = /home/hael-mou
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -91,7 +89,7 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/hael-mou:@/tmp/.ICE-unix/7315,unix/hael-mou:/tmp/.ICE-unix/7315
+SESSION_MANAGER = local/hael-mou:@/tmp/.ICE-unix/1069,unix/hael-mou:/tmp/.ICE-unix/1069
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -109,7 +107,7 @@ XDG_SESSION_DESKTOP = cinnamon
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 7811
+GIO_LAUNCHED_DESKTOP_FILE_PID = 17289
 # automatic
 %F = $(notdir $%)
 # environment
@@ -125,7 +123,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 7384
+SSH_AGENT_PID = 1143
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -165,7 +163,7 @@ CC = g++
 # makefile (from 'Makefile', line 14)
 EXEC = RPG_v1
 # environment
-XDG_SESSION_ID = c4
+XDG_SESSION_ID = c2
 # environment
 USER = hael-mou
 # environment
@@ -212,8 +210,6 @@ LC_PAPER = ar_MA.UTF-8
 CINNAMON_VERSION = 5.2.7
 # environment
 QT_ACCESSIBILITY = 1
-# environment
-DEFAULTS_PATH = /usr/share/gconf/cinnamon.default.path
 # default
 MAKEFILES := 
 # environment
@@ -247,9 +243,9 @@ LC_ADDRESS = ar_MA.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 7811
+VSCODE_PID = 17289
 # variable set hash-table stats:
-# Load=119/1024=12%, Rehash=0, Collisions=12/154=8%
+# Load=117/1024=11%, Rehash=0, Collisions=12/152=8%
 
 # Pattern-specific Variable Values
 
@@ -257,10 +253,10 @@ VSCODE_PID = 7811
 
 # Directories
 
-# . (device 2054, inode 680292): 9 files, no impossibilities.
+# . (device 2054, inode 680292): 11 files, no impossibilities.
 # src (device 2054, inode 680294): 8 files, no impossibilities.
 
-# 17 files, no impossibilities in 2 directories.
+# 19 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -279,11 +275,11 @@ drun:
 #  recipe to execute (from 'Makefile', line 25):
 	clear
 	@./bin/debug/${EXEC}
- 
 
 clear:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 29):
 	rm -rf  src/*.o
@@ -291,7 +287,7 @@ clear:
 src/Main.o: src/Main.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/Main'
-#  Last modified 2022-06-18 21:38:26.534041897
+#  Last modified 2022-06-20 11:52:48.829014411
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 17):
@@ -369,7 +365,7 @@ debug: src/Engine.o src/Main.o src/TextureManager.o
 src/Engine.o: src/Engine.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/Engine'
-#  Last modified 2022-06-18 21:43:39.334122284
+#  Last modified 2022-06-20 11:52:48.041010198
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 17):
@@ -390,7 +386,7 @@ src/Main.cpp:
 src/TextureManager.o: src/TextureManager.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/TextureManager'
-#  Last modified 2022-06-18 21:38:27.978060589
+#  Last modified 2022-06-20 11:52:50.197021705
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 17):
@@ -411,12 +407,12 @@ fclear: clear
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 36 / storage = 345 B / avg = 9 B
-# current buf: size = 8162 B / used = 345 B / count = 36 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 38 / storage = 360 B / avg = 9 B
+# current buf: size = 8162 B / used = 360 B / count = 38 / avg = 9 B
 
-# strcache performance: lookups = 59 / hit rate = 38%
+# strcache performance: lookups = 61 / hit rate = 37%
 # hash-table stats:
-# Load=36/8192=0%, Rehash=0, Collisions=3/59=5%
-# Finished Make data base on Sun Jun 19 12:02:43 2022
+# Load=38/8192=0%, Rehash=0, Collisions=3/61=5%
+# Finished Make data base on Mon Jun 20 13:09:16 2022
 
  
