@@ -1,5 +1,5 @@
-#ifndef VECTOR2D_CPP
-# define VECTOR2D_CPP
+#ifndef VECTOR2D_HPP
+# define VECTOR2D_HPP
 
 # include <iostream>
 

@@ -1,6 +1,6 @@
 #include "Engine.hpp"
 #include "TextureManager.hpp"
-#include "Vector2D.hpp"
+#include "Transform.hpp"
 
 Engine* Engine::Instance = nullptr;
 
@@ -30,14 +30,8 @@ bool            Engine::Init(const char* title, int width,int height)
 
     TextureManager::GetInstance()->Load("Bush1","res/gfx/Objects/Bush1.png");
     //------------------------------------------------------------------------
-        Vector2D v1(1, 2);
-        Vector2D v2(2, 1);
-        v1.Log("v1 :");
-        v2.Log("v2 :");
-        v1 = v1 + v2;
-        std::cout << "-------------------"<<std::endl;
-        v1.Log("v1+ :");
-        v2.Log("v2 :");
+        Transform tr;
+        tr.Log();
     //------------------------------------------------------------------------
     return (EisRunning = true);
 }
