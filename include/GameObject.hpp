@@ -8,14 +8,14 @@
 struct Properties
 {
     public:
-        Properties(std::string TextureID,int X, int Y, int Width, int Height, SDL_RendererFlip Flip)
+        Properties(std::string TextureID,int X, int Y, int Width, int Height, SDL_RendererFlip Flip = SDL_FLIP_NONE)
         {
             textureID = TextureID;
             x         = X;
             y         = Y;
             width     = Width;
             height    = Height;
-            Flip      = flip;
+            flip      = Flip;
         }
     public:
         int                 x;
@@ -31,20 +31,23 @@ class GameObject : public IObject
 {
 public:
     GameObject(Properties *props)
-    :textureID(props->textureID), width(props->width),height(props->height), flip(props->flip)
     {
-        transform = new Transform(props->x, props->y);
+        ObjtextureID = props->textureID;
+        Objwidth = props->width;
+        Objheight = props->height;
+        Objflip = props->flip;
+        Objtransform = new Transform(props->x, props->y);
     }
     virtual void    Draw()=0;
     virtual void    Updade(float dt)=0;
     virtual void    Clean()=0;
 
 protected:
-    int              width;
-    int              height;
-    std::string      textureID;
-    Transform*       transform;
-    SDL_RendererFlip flip;
+    int              Objwidth;
+    int              Objheight;
+    std::string      ObjtextureID;
+    Transform*       Objtransform;
+    SDL_RendererFlip Objflip;
 };
 
 #endif

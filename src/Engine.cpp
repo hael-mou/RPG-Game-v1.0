@@ -1,8 +1,9 @@
 #include "Engine.hpp"
 #include "TextureManager.hpp"
-#include "Transform.hpp"
+#include "Player.hpp"
 
 Engine* Engine::Instance = nullptr;
+Player *player = nullptr;
 
 bool            Engine::Init(const char* title, int width,int height)
 {
@@ -27,24 +28,22 @@ bool            Engine::Init(const char* title, int width,int height)
         SDL_Log("!! Renderer Creation is failed. Error: %s !!",SDL_GetError());
         return (false);
     }
-
-    TextureManager::GetInstance()->Load("Bush1","res/gfx/Objects/Bush1.png");
-    //------------------------------------------------------------------------
-        Transform tr;
-        tr.Log();
+     //------------------------------------------------------------------------
+    TextureManager::GetInstance()->Load("player1","res/dev/player/idle.png");
+    player = new Player(new Properties("player1", 100, 200, 128, 194));
     //------------------------------------------------------------------------
     return (EisRunning = true);
 }
 
 void            Engine::update()
 {
-
+    player->Updade(0);
 }
 
 void            Engine::Render()
 {
     SDL_RenderClear(renderer);
-    TextureManager::GetInstance()->Draw("Bush1", 100, 100,145, 88);
+    player->Draw();
     SDL_RenderPresent(renderer);
 }
 
@@ -63,7 +62,7 @@ void            Engine::Events()
 
 void            Engine::Clean()
 {
-    TextureManager::GetInstance()->clean();
+    player->Clean();
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     IMG_Quit();
